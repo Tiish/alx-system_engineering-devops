@@ -1,2 +1,21 @@
 #!/bin/bash
-echo $PATH | tr ':' '\n' |wc -1
+
+
+
+# Split the PATH variable into an array using the colon (:) separator
+
+IFS=':' read -ra dirs_in_path <<< "$PATH"
+
+
+
+# Count the number of directories in the array
+
+num_dirs_in_path=${#dirs_in_path[@]}
+
+
+
+# Print the result
+
+echo "There are $num_dirs_in_path directories in the PATH"
+
+
